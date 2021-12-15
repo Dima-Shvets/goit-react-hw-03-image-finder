@@ -60,11 +60,8 @@ class App extends Component {
     this.setState(({ modalOpen }) => ({ modalOpen: !modalOpen }));
   };
 
-  getModalPicture = id => {
-    const modalPicture = this.state.pictures.find(
-      picture => picture.id.toString() === id,
-    );
-    this.setState({ modalPicture: modalPicture });
+  getModalPicture = (largeImageURL, tags) => {
+    this.setState({ modalPicture: { largeImageURL, tags } });
   };
 
   formSubmitHandler = searchQuery => {

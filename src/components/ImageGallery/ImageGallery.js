@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import s from './ImageGallery.module.scss';
 
 export class ImageGallery extends Component {
-  pictureClickHandler = id => {
+  pictureClickHandler = (largeImageURL, tags) => {
     this.props.toggleModal();
-    this.props.getModalPicture(id);
+    this.props.getModalPicture(largeImageURL, tags);
   };
 
   render() {

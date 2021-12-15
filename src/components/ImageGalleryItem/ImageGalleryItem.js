@@ -8,9 +8,12 @@ export class ImageGalleryItem extends Component {
   };
 
   render() {
-    const { webformatURL, tags, id } = this.props.picture;
+    const { webformatURL, largeImageURL, tags, id } = this.props.picture;
     return (
-      <li className={s.ImageGalleryItem} onClick={this.clickHandler}>
+      <li
+        className={s.ImageGalleryItem}
+        onClick={() => this.props.clickHandler(largeImageURL, tags)}
+      >
         <img
           className={s['ImageGalleryItem-image']}
           src={webformatURL}
